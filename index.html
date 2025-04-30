@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="x-icon" href="logomedici.png">
     <title>Spitalul Județean Viceroy</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="AmericanTypewriterMedium">
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
     <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -66,155 +66,44 @@
         }
 
         body {
-            background: linear-gradient(283deg, #494949 45%, #1b1b1bf1 55%);
-            background-blend-mode: darken;
-            color: #333;
-            background-repeat: no-repeat;
-            background-size: cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            box-sizing: border-box;
-            overflow-x: hidden;
-        }
+    background: linear-gradient(283deg, #494949 45%, #1b1b1bf1 55%);
+    background-blend-mode: darken;
+    color: #333;
+    position: relative; /* Adăugăm poziționare relativă pentru pseudo-element */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
         @keyframes move {
     100% {
         transform: translate3d(0, 0, 1px) rotate(360deg);
     }
 }
 
-.background {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
+/* Pseudo-element pentru imaginea de fundal */
+body::before {
+    content: ''; /* Fără conținut, doar pentru stilizare */
+    position: absolute;
     top: 0;
     left: 0;
-    background: #272727;
-    overflow: hidden;
-    z-index: -10;
+    width: 100%;
+    height: 100%;
+    background-image: url('./Image.png'); /* Calea către imagine */
+    background-position: center; /* Centrează imaginea */
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(10px); /* Aplică un efect de blur */
+    z-index: -1; /* Asigură-te că imaginea este în spate față de text */
 }
 
-.background span {
-    width: 25vmin;
-    height: 25vmin;
-    border-radius: 25vmin;
-    backface-visibility: hidden;
-    position: absolute;
-    animation: move;
-    animation-duration: 25;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
-
-.background span:nth-child(0) {
-    color: #570000;
-    top: 11%;
-    left: 31%;
-    animation-duration: 180s;
-    animation-delay: -72s;
-    transform-origin: 0vw 10vh;
-    box-shadow: 50vmin 0 7.154105920940974vmin currentColor;
-}
-.background span:nth-child(1) {
-    color: #b95555;
-    top: 76%;
-    left: 31%;
-    animation-duration: 165s;
-    animation-delay: -88s;
-    transform-origin: 22vw -19vh;
-    box-shadow: -50vmin 0 6.689239204951046vmin currentColor;
-}
-.background span:nth-child(2) {
-    color: #b95555;
-    top: 66%;
-    left: 60%;
-    animation-duration: 167s;
-    animation-delay: -187s;
-    transform-origin: 9vw 24vh;
-    box-shadow: 50vmin 0 6.878266449298566vmin currentColor;
-}
-.background span:nth-child(3) {
-    color: #b95555;
-    top: 25%;
-    left: 7%;
-    animation-duration: 73s;
-    animation-delay: -9s;
-    transform-origin: 22vw -5vh;
-    box-shadow: -50vmin 0 6.75927961425531vmin currentColor;
-}
-.background span:nth-child(4) {
-    color: #570000;
-    top: 51%;
-    left: 88%;
-    animation-duration: 247s;
-    animation-delay: -234s;
-    transform-origin: -8vw -15vh;
-    box-shadow: -50vmin 0 6.331037575221973vmin currentColor;
-}
-.background span:nth-child(5) {
-    color: #b95555;
-    top: 6%;
-    left: 2%;
-    animation-duration: 56s;
-    animation-delay: -20s;
-    transform-origin: -10vw 14vh;
-    box-shadow: -50vmin 0 6.873790511743167vmin currentColor;
-}
-
-::-webkit-scrollbar{
-    display: none;
-}
-.background span:nth-child(6) {
-    color: #ff0000;
-    top: 48%;
-    left: 84%;
-    animation-duration: 53s;
-    animation-delay: -37s;
-    transform-origin: 24vw 25vh;
-    box-shadow: -50vmin 0 7.049323291173059vmin currentColor;
-}
-.background span:nth-child(7) {
-    color: #ff0000;
-    top: 97%;
-    left: 42%;
-    animation-duration: 177s;
-    animation-delay: -146s;
-    transform-origin: 10vw 10vh;
-    box-shadow: 50vmin 0 6.3164289068284285vmin currentColor;
-}
-.background span:nth-child(8) {
-    color: #b95555;
-    top: 20%;
-    left: 59%;
-    animation-duration: 225s;
-    animation-delay: -74s;
-    transform-origin: -19vw 17vh;
-    box-shadow: 50vmin 0 6.505996290994772vmin currentColor;
-}
-.background span:nth-child(9) {
-    color: #b95555;
-    top: 79%;
-    left: 32%;
-    animation-duration: 240s;
-    animation-delay: -217s;
-    transform-origin: -5vw 15vh;
-    box-shadow: -50vmin 0 7.142990266985626vmin currentColor;
-}
-.background span:nth-child(10) {
-    color: #ff0000;
-    top: 46%;
-    left: 13%;
-    animation-duration: 24s;
-    animation-delay: -219s;
-    transform-origin: -23vw 14vh;
-    box-shadow: -50vmin 0 6.398732173691017vmin currentColor;
-}
+.
 
         header {
     position: sticky;
@@ -227,7 +116,6 @@
     padding: 8px 20px;
     z-index: 13;
 }
-
 .logo {
     color: white;
     font-size: 1.7em;
@@ -461,7 +349,7 @@ nav.nav-menu a.active::before {
     padding: 5px 20px; /* Spațiere consistentă */
     box-sizing: border-box; /* Calcul corect al dimensiunilor */
     text-align: center; /* Centrare text */
-    font-family: Arial, sans-serif; /* Font modern */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font modern */
     position: relative;
     left: 0; /* Aliniere pe marginea din stânga */
     right: 0; /* Aliniere pe marginea din dreapta */
@@ -879,7 +767,7 @@ h4{
 }
 /* Stiluri generale pentru întreaga secțiune */
 #conducerea-spitalului {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 100%;
     margin-bottom: 10;
     padding-bottom: 30px; /* Adăugăm padding la bază */
@@ -1278,8 +1166,8 @@ h4{
             <span></span>
         </button>  
         <nav class="nav-menu">
-            <a href="#container" style="--clr:#ff4d4d;">Anunțuri</a>
-            <a href="#about" style="--clr:#ff4d4d;">Despre noi</a>
+            <a href="#container" style="--clr:#ff4d4d; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Anunțuri</a> 
+            <a href="#about" style="--clr:#ff4d4d; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Despre noi</a>
             <a href="#lista" style="--clr:#ff4d4d;">Conducere</a>
             <a href="#services" style="--clr:#ff4d4d;" >Servicii</a>
             <a href="#conducerea-spitalului" style="--clr:#ff4d4d;">Sub-Departamente</a>
