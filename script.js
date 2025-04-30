@@ -16,7 +16,7 @@ function fetchData() {
             data.forEach(item => {
                 const listItem = $(`
                     <div class="anuntSpital flex flex-col min-w-[32.5%] max-w-[32.5%] bg-gradient-to-br from-zinc-700 via-zinc-800 to-zinc-900 rounded-2xl shadow-xl overflow-hidden border border-zinc-700 hover:shadow-2xl transition-shadow duration-300">
-                        <div class="pozaSpital w-full h-60 relative">
+                        <div class="pozaSpital w-full h-50 relative">
                             <img src="./${item.imagine}.png" alt="Image" class="w-full h-full object-cover rounded-md">
                             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-transparent to-transparent p-4">
                                 <h3 class="text-white text-lg font-semibold drop-shadow-sm">Relații Publice</h3>
