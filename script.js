@@ -30,7 +30,6 @@ function fetchData() {
                             <div class="mt-4 flex gap-2">
                                 <span class="inline-block bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium">#${item.hashtags}</span>
                             </div>
-                        </div>
                     </div>`
                 );
                 $("#data-list").css("display", "flex")
