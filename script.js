@@ -15,27 +15,28 @@ function fetchData() {
 
             data.forEach(item => {
                 const listItem = $(`
-                    <div class="anuntSpital flex flex-col min-w-[32.5%] max-w-[32.5%] bg-gradient-to-br from-zinc-700 via-zinc-800 to-zinc-900 rounded-2xl shadow-xl overflow-hidden border border-zinc-700 hover:shadow-2xl transition-shadow duration-300">
-                        <div class="pozaSpital w-full h-50 relative">
-                            <img src="./${item.imagine}.png" alt="Image" class="w-full h-full object-cover rounded-md">
-                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-transparent to-transparent p-4">
-                                <h3 class="text-white text-lg font-semibold drop-shadow-sm">Relații Publice</h3>
-                            </div>
-                        </div>
-                        <div class="p-6 space-y-3">
-                            <h2 class="text-2xl font-bold text-white">${item.title}</h2>
-                            <p class="text-sm text-zinc-300 leading-relaxed">${item.text}</p>
-                            <div class="flex flex-wrap gap-2 pt-2">
-                                ${item.hashtags
-                                    .split(',')
-                                    .map(tag => `<span class="bg-rose-200 text-rose-800 px-3 py-1 rounded-full text-xs font-semibold">#${tag.trim()}</span>`)
-                                    .join('')}
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center px-6 py-4 bg-zinc-800 border-t border-zinc-700">
-                            <button class="text-sm text-zinc-300 hover:text-white transition">Detalii</button>
-                        </div>
-                    </div>
+<div class="anuntSpital flex flex-col min-w-[32.5%] max-w-[32.5%] bg-gradient-to-br from-zinc-700 via-zinc-800 to-zinc-900 rounded-2xl shadow-xl overflow-hidden border border-zinc-700 hover:shadow-2xl transition-shadow duration-300">
+    <div class="pozaSpital w-full h-60 relative">
+        <img src="./${item.imagine}.png" alt="Image" class="custom-img w-auto h-auto mx-auto rounded-md"> <!-- Modificare aici -->
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-transparent to-transparent p-4">
+            <h3 class="text-white text-lg font-semibold drop-shadow-sm">Relații Publice</h3>
+        </div>
+    </div>
+    <div class="p-6 space-y-3">
+        <h2 class="text-2xl font-bold text-white">${item.title}</h2>
+        <p class="text-sm text-zinc-300 leading-relaxed">${item.text}</p>
+        <div class="flex flex-wrap gap-2 pt-2">
+            ${item.hashtags
+                .split(',')
+                .map(tag => `<span class="bg-rose-200 text-rose-800 px-3 py-1 rounded-full text-xs font-semibold">#${tag.trim()}</span>`)
+                .join('')}
+        </div>
+    </div>
+    <div class="flex justify-between items-center px-6 py-4 bg-zinc-800 border-t border-zinc-700">
+        <button class="text-sm text-zinc-300 hover:text-white transition">Detalii</button>
+    </div>
+</div>
+
                 `);
                 dataList.append(listItem);
             });
