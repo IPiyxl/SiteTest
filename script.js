@@ -1,4 +1,3 @@
-
 const navLinks = document.querySelectorAll('.nav-menu a');
 
 const currentHash = window.location.hash;
@@ -28,15 +27,10 @@ function fetchData() {
                             <h2 class="text-2xl font-semibold text-white-800 dark:text-zinc-100">${item.title}</h2>
                             <p class="mt-2 text-white-600 dark:text-zinc-300">${item.text}</p>
                             <div class="mt-4 flex gap-2">
-                                <span class="inline-block bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium">#${item.hashtags}</span>
                             </div>
                         </div>
                         <div class="flex justify-between items-center px-6 py-4 bg-zinc-800 dark:bg-zinc-800 border-t border-zinc-600 dark:border-zinc-700">
                             <button class="like-button bg-transparent hover:bg-transparent flex items-center text-gray-500 hover:text-red-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.94l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
-                                </svg>
-                                <span class="ml-2">Apreciaza</span>
                             </button>
                         </div>
                     </div>`
