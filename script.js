@@ -1,160 +1,183 @@
-
-// ---------------- NAVIGATION LOGIC ----------------
 const navLinks = document.querySelectorAll('.nav-menu a');
+
 const currentHash = window.location.hash;
 
+function fetchData() {
+    fetch('./posts.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const dataList = $('#data-list');
+            dataList.empty();
+
+            data.forEach(item => {
+                const listItem = $(
+                    `<div class="anuntSpital flex flex-col min-w-[32.5%] max-w-[32.5%] bg-zinc-600 rounded-xl shadow-md overflow-hidden border border-zinc-600 dark:border-zinc-700">
+                        <div class="pozaSpital w-full h-[60%] relative border-b border-zinc-600 dark:border-zinc-700">
+                            <img src="./${item.imagine}.png" alt="Image" class="mt-0 w-full h-full rounded-md">
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-transparent to-transparent p-4">
+                                <h3 class="text-white text-xl font-bold">Relații Publice</h3>
+                            </div>
+                        </div>
+                        <div class="p-6 border-b border-zinc-600 dark:border-zinc-700">
+                            <h2 class="text-2xl font-semibold text-white-800 dark:text-zinc-100">${item.title}</h2>
+                            <p class="mt-2 text-white-600 dark:text-zinc-300">${item.text}</p>
+                            <div class="mt-4 flex gap-2">
+                                <span class="inline-block bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium">#${item.hashtags}</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center px-6 py-4 bg-zinc-800 dark:bg-zinc-800 border-t border-zinc-600 dark:border-zinc-700">
+                            <button class="like-button bg-transparent hover:bg-transparent flex items-center text-gray-500 hover:text-red-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.94l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                                </svg>
+                                <span class="ml-2">Apreciaza</span>
+                            </button>
+                        </div>
+                    </div>`
+                );
+                $("#data-list").css("display", "flex")
+                dataList.append(listItem);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+}
+
+fetchData();
+
 navLinks.forEach(link => {
-  link.classList.toggle('active', link.getAttribute('href') === currentHash);
+    if (link.getAttribute('href') === currentHash) {
+        link.classList.add('active');
+    } else {
+        link.classList.remove('active');
+    }
 });
 
 window.addEventListener('hashchange', () => {
-  const newHash = window.location.hash;
-  navLinks.forEach(link => {
-    link.classList.toggle('active', link.getAttribute('href') === newHash);
-  });
+    const newHash = window.location.hash;
+
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === newHash) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
 });
 
-// ---------------- FETCH & DISPLAY ANNOUNCEMENTS ----------------
-function fetchData() {
-  fetch('./posts.json')
-    .then(response => {
-      if (!response.ok) throw new Error('Eroare la încărcarea datelor!');
-      return response.json();
-    })
-    .then(data => {
-      const dataList = document.getElementById('data-list');
-      if (!dataList) return;
 
-      dataList.innerHTML = '';
-      dataList.style.display = 'flex';
-      dataList.style.flexWrap = 'wrap';
-      dataList.style.gap = '24px';
-      dataList.style.justifyContent = 'center';
-
-      data.forEach(item => {
-        const card = document.createElement('div');
-        card.className = `
-          anuntSpital flex flex-col bg-zinc-800/70 text-white rounded-2xl shadow-xl 
-          overflow-hidden max-w-[360px] transition-transform duration-300 hover:scale-[1.03]
-        `;
-        card.innerHTML = `
-          <div class="relative h-48 overflow-hidden">
-            <img src="./${item.imagine}.png" onerror="this.src='default.png'" alt="Imagine" class="w-full h-full object-cover">
-            <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-3">
-              <h3 class="text-lg font-bold drop-shadow">Relații Publice</h3>
-            </div>
-          </div>
-          <div class="p-5">
-            <h2 class="text-xl font-semibold flex items-center gap-2">
-              ${getEmoji(item.title)} ${item.title}
-            </h2>
-            <p class="text-sm mt-2 text-zinc-300">${item.text}</p>
-            <div class="mt-4">
-              <span class="bg-red-600/20 text-red-400 px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
-                #${item.hashtags}
-              </span>
-            </div>
-          </div>
-        `;
-        dataList.appendChild(card);
-      });
-    })
-    .catch(err => console.error('Eroare la preluarea anunțurilor:', err));
-}
-
-function getEmoji(title) {
-  const lower = title.toLowerCase();
-  if (lower.includes('adeverin')) return '📝';
-  if (lower.includes('chirurgie')) return '🏥';
-  if (lower.includes('tatuaj')) return '💉';
-  if (lower.includes('consulta')) return '🩺';
-  if (lower.includes('urgent')) return '🚑';
-  return '📢';
-}
-
-// ---------------- HAMBURGER MENU ----------------
-const hamburger = document.querySelector('.hamburger');
-if (hamburger) {
-  hamburger.addEventListener('click', function () {
+document.querySelector('.hamburger').addEventListener('click', function () {
     this.classList.toggle('active');
-    document.querySelector('.nav-menu')?.classList.toggle('active');
-  });
-}
+    document.querySelector('.nav-menu').classList.toggle('active');
+});
 
-// ---------------- SCROLL-BASED NAV HIGHLIGHT ----------------
+let sec = document.querySelectorAll('section');
+let links = document.querySelectorAll('nav a');
+
 window.onscroll = () => {
-  const sections = document.querySelectorAll('section');
-  const links = document.querySelectorAll('nav a');
+    sec.forEach(section => {
+        let top = window.scrollY;
+        let offset = section.offsetTop;  // Fix: use 'section' here
+        let height = section.offsetHeight;  // Fix: use 'section' here
+        let id = section.getAttribute('id');  // Fix: use 'section' here
 
-  sections.forEach(section => {
-    const top = window.scrollY;
-    const offset = section.offsetTop;
-    const height = section.offsetHeight;
-    const id = section.getAttribute('id');
-
-    if (top >= offset && top < offset + height) {
-      links.forEach(link => link.classList.remove('active'));
-      document.querySelector(`nav a[href*="${id}"]`)?.classList.add('active');
-    }
-  });
+        if (top >= offset && top < offset + height) {
+            links.forEach(link => {
+                link.classList.remove('active');
+                document.querySelector('nav a[href*=' + id + ']').classList.add('active');
+            });
+        }
+    });
 };
 
-// ---------------- FORMAT PHONE NUMBER ----------------
 function formatPhoneNumber(inputId) {
-  const input = document.getElementById(inputId);
-  if (!input) return;
-  input.addEventListener('input', e => {
-    let value = e.target.value.replace(/\D/g, '');
+    const phoneInput = document.getElementById(inputId);
+    phoneInput.addEventListener('input', function (e) {
+    let value = e.target.value.replace(/\D/g, ''); // Elimină caracterele non-numerice
     if (value.length > 3) {
-      value = value.slice(0, 3) + '-' + value.slice(3, 7);
+        value = value.slice(0, 3) + '-' + value.slice(3, 7); // Adaugă cratima
     }
     e.target.value = value;
-  });
+    });
 }
 
-// ---------------- DISCORD WEBHOOK FORM ----------------
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-  contactForm.addEventListener('submit', function (event) {
-    event.preventDefault();
+window.addEventListener("load", (event) => {
+    formatPhoneNumber('NUMAR_DE_TEL');
 
-    const getValue = id => document.getElementById(id)?.value.trim() || '';
-    const payload = {
-      content: \`:warning: **Cerere Audiență** :warning:\n\` +
-        \`**1) Nume:** \${getValue('NUME')}\n\` +
-        \`**2) CNP:** \${getValue('ID')}\n\` +
-        \`**3) Numele medicului reclamat:** \${getValue('NUME_RECLAMAT')}\n\` +
-        \`**4) Call Sign Medic:** \${getValue('CALL_SIGN')}\n\` +
-        \`**5) Număr de telefon:** \${getValue('NUMAR_DE_TEL')}\n\` +
-        \`**6) Discord:** \${getValue('EMAIL')}\n\` +
-        \`**7) Data incidentului:** \${getValue('DATA')}\n\` +
-        \`**8) Dovada:** \${getValue('DETALII')}\`
-    };
-
-    fetch("https://discord.com/api/webhooks/1357771363221504040/RNs_MoICw-hD62s_Xpp4xN71QQctJeGE8_r5YBeVoK4VrKWn49svO-L621b7H3xoHuQN", {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    })
-      .then(response => {
-        const msg = document.getElementById('responseMessage');
-        if (response.ok) {
-          if (msg) msg.innerText = \`Mulțumim, \${getValue('NUME')}! Cererea ta a fost trimisă.\`;
-          contactForm.reset();
-        } else {
-          if (msg) msg.innerText = "Eroare la trimitere. Încearcă din nou.";
-        }
-      })
-      .catch(error => {
-        console.error("Eroare Discord:", error);
-        const msg = document.getElementById('responseMessage');
-        if (msg) msg.innerText = "Eroare la conexiune.";
-      });
   });
+  
+
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Preluăm datele din formular
+        const name = document.getElementById('NUME').value.trim();
+        const cnp = document.getElementById('ID').value.trim();
+        const medicReclamat = document.getElementById('NUME_RECLAMAT').value.trim();
+        const callSign = document.getElementById('CALL_SIGN').value.trim();
+        const phone = document.getElementById('NUMAR_DE_TEL').value.trim();
+        const incidentDate = document.getElementById('DATA').value.trim();
+        const discordName = document.getElementById('EMAIL').value.trim();
+        const proof = document.getElementById('DETALII').value.trim();
+
+        const webhookUrl = "https://discord.com/api/webhooks/1357771363221504040/RNs_MoICw-hD62s_Xpp4xN71QQctJeGE8_r5YBeVoK4VrKWn49svO-L621b7H3xoHuQN";
+
+        const payload = {
+            content: `:warning: **Cerere Audiență** :warning:\n**1) Nume:** ${name}\n**2) CNP:** ${cnp}\n**3) Numele medicului reclamat:** ${medicReclamat}\n**4) Call Sign Medic:** ${callSign}\n**5) Număr de telefon:** ${phone}\n**6) Discord:** ${discordName}\n**7) Data incidentului:** ${incidentDate}\n**8) Dovada:** ${proof}`
+        };
+
+        fetch(webhookUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        })
+        .then(response => {
+            if (response.ok) {
+                document.getElementById('responseMessage').innerText = `Mulțumim, ${name}! Cererea Dvs a fost inregistrata, un membru al Conducerii se v-a ocupa.`;
+                document.getElementById('contactForm').reset();
+            } else {
+                document.getElementById('responseMessage').innerText = "Eroare la trimiterea mesajului. Te rugăm să încerci din nou.";
+            }
+        })
+        .catch(error => {
+            console.error("Eroare la trimiterea datelor către Discord:", error);
+            document.getElementById('responseMessage').innerText = "Eroare la trimiterea mesajului. Te rugăm să încerci din nou.";
+        });
+    });
+    class MediumImage extends HTMLElement {
+    constructor() {
+        super();
+
+        const shadow = this.attachShadow({ mode: 'open' });
+
+        const container = document.createElement('div');
+        const image = document.createElement('div');
+
+        const style = document.createElement('style');
+        style.textContent = `
+            div {
+                width: 300px;
+                height: 200px;
+                background-size: cover;
+                background-position: center;
+                border-radius: 8px;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            }
+        `;
+
+        const src = this.getAttribute('src');
+        image.style.backgroundImage = `url(${src})`;
+
+        shadow.appendChild(style);
+        shadow.appendChild(container);
+        container.appendChild(image);
+    }
 }
 
-// ---------------- INITIALIZE ----------------
-window.addEventListener("load", () => {
-  fetchData();
-  formatPhoneNumber('NUMAR_DE_TEL');
-});
+customElements.define('medium-image', MediumImage);
