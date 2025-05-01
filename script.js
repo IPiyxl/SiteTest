@@ -26,7 +26,6 @@ function fetchData() {
                             <h2 class="text-2xl font-semibold text-white-800 dark:text-zinc-100">${item.title}</h2>
                             <p class="mt-2 text-white-600 dark:text-zinc-300">${item.text}</p>
                             <div class="mt-4 flex gap-2">
-                                <span class="inline-block bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium">#${item.hashtags}</span>
                             </div>
                         </div>
                         <div class="flex justify-between items-center px-6 py-4 bg-zinc-800 dark:bg-zinc-800 border-t border-zinc-600 dark:border-zinc-700">
