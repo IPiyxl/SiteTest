@@ -1,3 +1,4 @@
+
 // ---------------- NAVIGATION LOGIC ----------------
 const navLinks = document.querySelectorAll('.nav-menu a');
 const currentHash = window.location.hash;
@@ -24,7 +25,7 @@ function fetchData() {
       const dataList = document.getElementById('data-list');
       if (!dataList) return;
 
-      dataList.innerHTML = ''; // Golește conținutul anterior
+      dataList.innerHTML = '';
       dataList.style.display = 'flex';
       dataList.style.flexWrap = 'wrap';
       dataList.style.gap = '24px';
@@ -38,7 +39,7 @@ function fetchData() {
         `;
         card.innerHTML = `
           <div class="relative h-48 overflow-hidden">
-            <img src="./${item.imagine}.png" alt="Imagine" class="w-full h-full object-cover">
+            <img src="./${item.imagine}.png" onerror="this.src='default.png'" alt="Imagine" class="w-full h-full object-cover">
             <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-3">
               <h3 class="text-lg font-bold drop-shadow">Relații Publice</h3>
             </div>
@@ -119,15 +120,15 @@ if (contactForm) {
 
     const getValue = id => document.getElementById(id)?.value.trim() || '';
     const payload = {
-      content: `:warning: **Cerere Audiență** :warning:\n` +
-        `**1) Nume:** ${getValue('NUME')}\n` +
-        `**2) CNP:** ${getValue('ID')}\n` +
-        `**3) Numele medicului reclamat:** ${getValue('NUME_RECLAMAT')}\n` +
-        `**4) Call Sign Medic:** ${getValue('CALL_SIGN')}\n` +
-        `**5) Număr de telefon:** ${getValue('NUMAR_DE_TEL')}\n` +
-        `**6) Discord:** ${getValue('EMAIL')}\n` +
-        `**7) Data incidentului:** ${getValue('DATA')}\n` +
-        `**8) Dovada:** ${getValue('DETALII')}`
+      content: \`:warning: **Cerere Audiență** :warning:\n\` +
+        \`**1) Nume:** \${getValue('NUME')}\n\` +
+        \`**2) CNP:** \${getValue('ID')}\n\` +
+        \`**3) Numele medicului reclamat:** \${getValue('NUME_RECLAMAT')}\n\` +
+        \`**4) Call Sign Medic:** \${getValue('CALL_SIGN')}\n\` +
+        \`**5) Număr de telefon:** \${getValue('NUMAR_DE_TEL')}\n\` +
+        \`**6) Discord:** \${getValue('EMAIL')}\n\` +
+        \`**7) Data incidentului:** \${getValue('DATA')}\n\` +
+        \`**8) Dovada:** \${getValue('DETALII')}\`
     };
 
     fetch("https://discord.com/api/webhooks/1357771363221504040/RNs_MoICw-hD62s_Xpp4xN71QQctJeGE8_r5YBeVoK4VrKWn49svO-L621b7H3xoHuQN", {
@@ -138,15 +139,16 @@ if (contactForm) {
       .then(response => {
         const msg = document.getElementById('responseMessage');
         if (response.ok) {
-          msg.innerText = `Mulțumim, ${getValue('NUME')}! Cererea ta a fost trimisă.`;
+          if (msg) msg.innerText = \`Mulțumim, \${getValue('NUME')}! Cererea ta a fost trimisă.\`;
           contactForm.reset();
         } else {
-          msg.innerText = "Eroare la trimitere. Încearcă din nou.";
+          if (msg) msg.innerText = "Eroare la trimitere. Încearcă din nou.";
         }
       })
       .catch(error => {
         console.error("Eroare Discord:", error);
-        document.getElementById('responseMessage').innerText = "Eroare la conexiune.";
+        const msg = document.getElementById('responseMessage');
+        if (msg) msg.innerText = "Eroare la conexiune.";
       });
   });
 }
