@@ -1,3 +1,4 @@
+
 const navLinks = document.querySelectorAll('.nav-menu a');
 
 const currentHash = window.location.hash;
