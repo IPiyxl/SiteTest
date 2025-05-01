@@ -16,7 +16,7 @@ function fetchData() {
 
             data.forEach(item => {
                 const listItem = $(
-                    `<div class="anuntSpital flex flex-col min-w-[32.5%] max-w-[32.5%] bg-zinc-600 rounded-xl shadow-md overflow-hidden border border-zinc-600 dark:border-zinc-700">
+                    `<div class="anuntSpital flex flex-col w-full sm:w-[48%] lg:w-[32%] bg-zinc-600 rounded-xl shadow-md overflow-hidden border border-zinc-600 dark:border-zinc-700">
                         <div class="pozaSpital w-full h-[60%] relative border-b border-zinc-600 dark:border-zinc-700">
                             <img src="./${item.imagine}.png" alt="Image" class="mt-0 w-full h-full rounded-md">
                             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-transparent to-transparent p-4">
