@@ -3,19 +3,18 @@
         "title": "Adeverințe Medicale",
         "imagine": "bg_adeverinte",
         "text": "Spitalul din Sandy vă informează că în data de 30.04.2025 între orele 15:00-15:40 se vor elibera adeverințe medicale. Prețul este de 10.000$ împachetați.",
-        "hashtags": ""
+        "hashtags": "Adeverinte"
     },
     {
         "title": "🏥 Chirurgie Plastică 🏥",
         "imagine": "bg_faciala",
         "text": "Spitalul Județean Viceory dispune de o tehnologie avansată pentru cei care vor o schimbare! Costul unei astfel de operații este de 550.000$ și se poate realiza o singură dată!",
-        "hashtags": ""
+        "hashtags": "ChirurgiePlastică"
     },
     {
         "title": "💉 Operație Tatuaje 💉",
         "imagine": "bg_tatuaje",
         "text": "Vino la spital pentru o schimbare! Spitalul Județean Viceory vă oferă oportunitatea de a îndepărta tatuajele de pe corp în schimbul sumei de 10.000$.",
-        "hashtags": ""
+        "hashtags": "Tatuaje"
     }
 ]
-
