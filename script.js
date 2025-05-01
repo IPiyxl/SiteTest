@@ -30,6 +30,7 @@ function fetchData() {
                             </div>
                         </div>
                         <div class="flex justify-between items-center px-6 py-4 bg-zinc-800 dark:bg-zinc-800 border-t border-zinc-600 dark:border-zinc-700">
+                        </div>
                     </div>`
                 );
                 $("#data-list").css("display", "flex")
