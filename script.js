@@ -42,8 +42,6 @@ function fetchData() {
                 );
                 $("#data-list").css("display", "flex")
                 dataList.append(listItem);
-                document.body.style.overflowX = "hidden";
-                document.documentElement.style.overflowX = "hidden";
             });
         })
         .catch(error => {
@@ -52,6 +50,15 @@ function fetchData() {
 }
 
 fetchData();
+
+// Rezolvă problema cu bara de scroll orizontală
+const style = document.createElement('style');
+style.textContent = `
+    body {
+        overflow-x: hidden;
+    }
+`;
+document.head.appendChild(style);
 
 navLinks.forEach(link => {
     if (link.getAttribute('href') === currentHash) {
