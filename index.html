@@ -6,9 +6,9 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css?v=2">
     <link rel="shortcut icon" type="x-icon" href="logomedici.png">
     <title>Spitalul Județean Viceroy</title>
-    <link rel="stylesheet" href="AmericanTypewriterMedium">
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
     <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -59,12 +59,6 @@
             }
         }
 
-        @font-face {
-  font-family: 'Space Grotesk';
-  src: local('Space Grotesk'), url('https://fonts.gstatic.com/s/spacegrotesk/v16/fC1mPYxPY3rXxEndZQYj14Ett5E.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
         /* Stil general */
         * {
   margin: 0;
@@ -784,7 +778,6 @@ h4{
     .pozaSpital{
         height: 30%;
     }
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap');
 
 }
 /* Stiluri generale pentru întreaga secțiune */
@@ -1077,6 +1070,7 @@ h4{
     font-style: italic;
 }
 .collapsible {
+    text-align: center;
     box-shadow: 0 2px 20px #000000;
     display: block;         /* asigură comportament de block */
     margin: 26px auto 0;    /* auto pe stânga și dreapta = centru */
@@ -1087,12 +1081,14 @@ h4{
     padding: 10px;
     text-align: center;
     outline: none;
+    outline-offset: none;
     font-size: 16px;
     border-radius: 30px;
 }
 
         .collapsible:hover {
             background-color: #94311f;
+            border-radius: 30px;
         }
 
         .content2 {
@@ -1112,8 +1108,10 @@ h4{
         }
 
         #contactForm {
+            outline: none;
             display: flex;
             flex-direction: column;
+            border-radius: 30px;
             gap: 10px;
         }
 
@@ -1131,16 +1129,16 @@ h4{
         button {
             box-shadow: 0 2px 20px #000000;
             display: block;         /* asigură comportament de block */
-    margin: 26px auto 0;    /* auto pe stânga și dreapta = centru */
-    width: 100%;             /* sau cât vrei tu */
-    background-color: #ba3131;
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-    text-align: center;
-    outline: none;
-    font-size: 16px;
-    border-radius: 30px;
+            margin: 26px auto 0;    /* auto pe stânga și dreapta = centru */
+            width: 100%;             /* sau cât vrei tu */
+            background-color: #ba3131;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            text-align: center;
+            outline: none;
+            font-size: 16px;
+            border-radius: 30px;
         }
 
         button:hover {
@@ -1194,7 +1192,9 @@ h4{
         <span></span>
     </div>
     <header>
+        <h2 style="color: transparent;">asas</h2>
         <center><a href="#" class="logo">Departamentul Medical</a><span id="medic"></span></center>
+        <h2 style="color: transparent;">salut nica</h2>
         <button class="hamburger" aria-label="Toggle navigation">
             <span></span>
             <span></span>
@@ -1500,29 +1500,29 @@ h4{
             <div class="content2">
                 <section id="contact">
                     <form id="contactForm">
-                        <label for="NUME">Nume:</label>
-                        <input type="text" id="NUME" placeholder="Nume și Prenumele Dvs" required>
+                        <center><label for="NUME">Nume:</label></center>
+                        <input type="text" style="border-radius: 20px;" id="NUME" placeholder="Nume și Prenumele Dvs" required>
                         
-                        <label for="ID">CNP:</label>
-                        <input type="number" id="ID" placeholder="Menționați Id-ul Dvs" required>
+                        <center><label for="ID">CNP:</label></center>
+                        <input type="number" id="ID" style="border-radius: 20px;" placeholder="Menționați Id-ul Dvs" required>
         
-                        <label for="NUME_RECLAMAT">Nume Reclamat:</label>
-                        <input type="text" id="NUME_RECLAMAT" placeholder="Nume și Prenumele medicului reclamat" required>
+                        <center><label for="NUME_RECLAMAT">Nume Reclamat:</label></center>
+                        <input type="text" style="border-radius: 20px;" id="NUME_RECLAMAT"  placeholder="Nume și Prenumele medicului reclamat" required>
         
-                        <label for="CALL_SIGN">Call-sign Medic:</label>
-                        <input type="text" id="CALL_SIGN" placeholder="Insigna medicului reclamat" required>
+                        <center><label for="CALL_SIGN">Call-sign Medic:</label></center>
+                        <input type="text" style="border-radius: 20px;" id="CALL_SIGN" placeholder="Insigna medicului reclamat" required>
         
-                        <label for="NUMAR_DE_TEL">Număr de telefon:</label>
-                        <input type="text" id="NUMAR_DE_TEL" placeholder="Numărul dvs de telefon" required maxlength="8">
+                        <center><label for="NUMAR_DE_TEL">Număr de telefon:</label></center>
+                        <input type="text" id="NUMAR_DE_TEL" style="border-radius: 20px;" placeholder="Numărul dvs de telefon" required maxlength="8">
         
-                        <label for="DATA">Data incidentului:</label>
-                        <input type="text" id="DATA" placeholder="Menționați Data incidentului" required>
+                        <center><label for="DATA">Data incidentului:</label></center>
+                        <input type="text" id="DATA" style="border-radius: 20px;" placeholder="Menționați Data incidentului" required>
         
-                        <label for="EMAIL">Discord:</label>
-                        <input type="text" id="EMAIL" placeholder="Numele dvs de pe Discord" required>
+                        <center><label for="EMAIL">Discord:</label></center>
+                        <input type="text" id="EMAIL" style="border-radius: 20px;" placeholder="Numele dvs de pe Discord" required>
         
-                        <label for="DETALII">Dovada:</label>
-                        <input id="DETALII" placeholder="Atașați un link cu dovada video/foto" required>
+                        <center><label for="DETALII">Dovada:</label></center>
+                        <input id="DETALII" style="border-radius: 20px;" placeholder="Atașați un link cu dovada video/foto" required>
         
                         <button type="submit" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">Trimite Cererea De Audiență</button>
                     </form>
