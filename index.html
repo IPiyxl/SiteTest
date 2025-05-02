@@ -1077,28 +1077,32 @@ h4{
     font-style: italic;
 }
 .collapsible {
-            background-color: #ff5233;
-            color: white;
-            cursor: pointer;
-            padding: 10px;
-            text-align: center;
-            outline: none;
-            font-size: 16px;
-            width: 100%;
-            border-radius: 10px;
-            margin-top: 26px;
-        }
+    box-shadow: 0 2px 20px #000000;
+    display: block;         /* asigură comportament de block */
+    margin: 26px auto 0;    /* auto pe stânga și dreapta = centru */
+    width: 70%;             /* sau cât vrei tu */
+    background-color: #ba3131;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    outline: none;
+    font-size: 16px;
+    border-radius: 30px;
+}
 
         .collapsible:hover {
             background-color: #94311f;
         }
 
         .content2 {
+            width: 70%;
+            margin: 26px auto 0;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
+            transition: max-height 0.4s ease-out;
             background-color: transparent;
-            border-radius: 5px;
+            border-radius: 30px;
             padding: 0 10px;
         }
 
@@ -1125,10 +1129,18 @@ h4{
         }
 
         button {
-            background-color: #ff3c00;
-            color: white;
-            cursor: pointer;
-            border: none;
+            box-shadow: 0 2px 20px #000000;
+            display: block;         /* asigură comportament de block */
+    margin: 26px auto 0;    /* auto pe stânga și dreapta = centru */
+    width: 100%;             /* sau cât vrei tu */
+    background-color: #ba3131;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    outline: none;
+    font-size: 16px;
+    border-radius: 30px;
         }
 
         button:hover {
@@ -1198,7 +1210,7 @@ h4{
         </nav></center>
     </header>
     <div class="container" id="container">
-        <h2 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 30px; color: #ffffff; text-align: center; font-weight: 500;">Anunțuri Importante</h2>
+        <h2 style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 30px; color: #ffffff; text-align: center; font-weight: 500;">Anunțuri Importante</h2>
         <section id="data-list" style="display: none;" class="flex flex-row overflow-x-hidden gap-[2%] h-[64vh] bg-transparent shadow-none font-size:13px">
         </section>
         <section id="about">
@@ -1484,7 +1496,7 @@ h4{
                     </div>
             </section>
             
-            <button class="collapsible">Cerere Audiență</button>
+            <button class="collapsible" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">Cerere Audiență</button>
             <div class="content2">
                 <section id="contact">
                     <form id="contactForm">
@@ -1512,7 +1524,7 @@ h4{
                         <label for="DETALII">Dovada:</label>
                         <input id="DETALII" placeholder="Atașați un link cu dovada video/foto" required>
         
-                        <button type="submit">Trimite Cererea De Audiență</button>
+                        <button type="submit" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">Trimite Cererea De Audiență</button>
                     </form>
                     <div id="responseMessage"></div>
                 </section>
