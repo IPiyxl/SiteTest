@@ -1207,6 +1207,32 @@ h4{
   opacity: 0.8;
 }
 
+.imgBx img:hover {
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        transform: scale(1.05);
+        transition: all 0.3s ease-in-out;
+    }
+
+    video:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .sub-department:hover {
+    transform: scale(1.2) rotate(2deg); /* Mărire și ușoară rotație */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Umbra mai pronunțată */
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.image-box img:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+
 
     </style>
 </head>
@@ -1262,129 +1288,171 @@ h4{
                     Videoclipul nu poate fi redat în browserul tău.
                 </video></center>
 </section>
-        <section id="lista" style="border-radius: 30px;">
-            <center><h2, style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold; color: white; font-size: 25px;">Conducerea Spitalului</h2></center>
-            <div class="box">
-                <div class="list">
-                    <div class="imgBx">
-                        <img src="img_alin2.png" ></img>
-                    </div>
-                    <div class="content">
-                       <h1 class="rank"><small> M - </small>001</h1>
-                       <h4>Darrin Rodriguez</h4>
-                       <p2>Director General</p2>
+<section id="lista" style="border-radius: 30px;">
+    <center>
+        <h2 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold; color: white; font-size: 25px; transition: color 0.3s, transform 0.3s;" onmouseover="this.style.color='#ff4d4d'; this.style.transform='scale(1.1)';" onmouseout="this.style.color='white'; this.style.transform='scale(1)';">
+            Conducerea Spitalului
+        </h2>
+    </center>
+
+    <!-- Director General -->
+    <div style="margin-bottom: 30px;">
+        <h3 style="color: #ffffff; font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;">
+            <i class="fas fa-user-tie"></i> Director General
+        </h3>
+        <div class="box">
+            <div class="list">
+                <div class="imgBx">
+                    <img src="img_alin2.png" alt="Darrin Rodriguez">
+                </div>
+                <div class="content">
+                    <h1 class="rank"><small> M - </small>001</h1>
+                    <h4>Darrin Rodriguez</h4>
+                    <p2>Director General</p2>
                     <p class="old">Vechime: 06.04.2021</p>
                 </div>
             </div>
-            <div class="box">
-                <div class="list">
-                    <div class="imgBx">
-                        <img src="img_antonio.png" ></img>
-                    </div>
-                    <div class="content">
-                       <h1 class="rank"><small> M - </small>002</h1>
-                       <h4>Shades Antonio</h4>
-                       <p2>Director Adjunct</p2>
-                       <p class="old">Vechime: 25.10.2023</p>
+        </div>
+    </div>
+
+    <!-- Directori Adjuncți -->
+    <div style="margin-bottom: 30px;">
+        <h3 style="color: #ffffff; font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;">
+            <i class="fas fa-user"></i> Directori Adjuncți
+        </h3>
+        <div class="box">
+            <div class="list">
+                <div class="imgBx">
+                    <img src="img_antonio.png" alt="Shades Antonio">
+                </div>
+                <div class="content">
+                    <h1 class="rank"><small> M - </small>002</h1>
+                    <h4>Shades Antonio</h4>
+                    <p2>Director Adjunct</p2>
+                    <p class="old">Vechime: 25.10.2023</p>
                 </div>
             </div>
-            <div class="box">
-                <div class="list">
-                    <div class="imgBx">
-                        <img src="img_mihu.png" ></img>
-                    </div>
-                    <div class="content">
-                       <h1 class="rank"><small> M - </small>003</h1>
-                       <h4>Mario Mihu</h4>
-                       <p2>Director Adjunct</p2>
-                       <p class="old">Vechime: 07.11.2023</p>
+        </div>
+        <div class="box">
+            <div class="list">
+                <div class="imgBx">
+                    <img src="img_mihu.png" alt="Mario Mihu">
+                </div>
+                <div class="content">
+                    <h1 class="rank"><small> M - </small>003</h1>
+                    <h4>Mario Mihu</h4>
+                    <p2>Director Adjunct</p2>
+                    <p class="old">Vechime: 07.11.2023</p>
                 </div>
             </div>
-            <div class="box">
-                <div class="list">
-                    <div class="imgBx">
-                        <img src="img_manolescu2.png" ></img>
-                    </div>
-                    <div class="content">
-                       <h1 class="rank"><small> M - </small>004</h1>
-                       <h4>Alex Manolescu</h4>
-                       <p2>Medic Inspector</p2>
-                       <p class="old">Vechime: 23.07.2024</p>
+        </div>
+    </div>
+
+    <!-- Medic Inspectori -->
+    <div style="margin-bottom: 30px;">
+        <h3 style="color: #ffffff; font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;">
+            <i class="fas fa-user-md"></i> Medic Inspectori
+        </h3>
+        <div class="box">
+            <div class="list">
+                <div class="imgBx">
+                    <img src="img_manolescu2.png" alt="Alex Manolescu">
+                </div>
+                <div class="content">
+                    <h1 class="rank"><small> M - </small>004</h1>
+                    <h4>Alex Manolescu</h4>
+                    <p2>Medic Inspector</p2>
+                    <p class="old">Vechime: 23.07.2024</p>
                 </div>
             </div>
-            <div class="box">
-                <div class="list">
-                    <div class="imgBx">
-                        <img src="img_brown.png" ></img>
-                    </div>
-                    <div class="content">
-                       <h1 class="rank"><small> M - </small>005</h1>
-                       <h4>Brown Allanon</h4>
-                       <p2>Medic Inspector</p2>
-                       <p class="old">Vechime: 30.04.2024</p>
+        </div>
+        <div class="box">
+            <div class="list">
+                <div class="imgBx">
+                    <img src="img_brown.png" alt="Brown Allanon">
+                </div>
+                <div class="content">
+                    <h1 class="rank"><small> M - </small>005</h1>
+                    <h4>Brown Allanon</h4>
+                    <p2>Medic Inspector</p2>
+                    <p class="old">Vechime: 30.04.2024</p>
                 </div>
             </div>
-            <div class="box">
-                <div class="list">
-                    <div class="imgBx">
-                        <img src="img_olteanu.png" ></img>
-                    </div>
-                    <div class="content">
-                       <h1 class="rank"><small> M - </small>006</h1>
-                       <h4>Cranta Virgil</h4>
-                       <p2>Medic Inspector</p2>
-                       <p class="old">Vechime: 30.10.2024</p>
+        </div>
+        <div class="box">
+            <div class="list">
+                <div class="imgBx">
+                    <img src="img_olteanu.png" alt="Cranta Virgil">
+                </div>
+                <div class="content">
+                    <h1 class="rank"><small> M - </small>006</h1>
+                    <h4>Cranta Virgil</h4>
+                    <p2>Medic Inspector</p2>
+                    <p class="old">Vechime: 30.10.2024</p>
                 </div>
             </div>
-            <div class="box">
-                <div class="list">
-                    <div class="imgBx">
-                        <img src="img_macovei2.png" ></img>
-                    </div>
-                    <div class="content">
-                       <h1 class="rank"><small> M - </small>007</h1>
-                       <h4>Macovei Marius-Iocan</h4>
-                       <p2>Medic Chirurg</p2>
-                       <p class="old">Vechime: 09.07.2024</p>
+        </div>
+    </div>
+
+    <!-- Medici Chirurgi -->
+    <div>
+        <h3 style="color: #ffffff; font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;">
+            <i class="fas fa-user-nurse"></i> Medici Chirurgi
+        </h3>
+        <div class="box">
+            <div class="list">
+                <div class="imgBx">
+                    <img src="img_macovei2.png" alt="Macovei Marius-Iocan">
+                </div>
+                <div class="content">
+                    <h1 class="rank"><small> M - </small>007</h1>
+                    <h4>Macovei Marius-Iocan</h4>
+                    <p2>Medic Chirurg</p2>
+                    <p class="old">Vechime: 09.07.2024</p>
                 </div>
             </div>
-            <div class="box">
-                <div class="list">
-                    <div class="imgBx">
-                        <img src="img_benone2.png" ></img>
-                    </div>
-                    <div class="content">
-                       <h1 class="rank"><small> M - </small>008</h1>
-                       <h4>Benone Cranta</h4>
-                       <p2>Medic Chirurg</p2>
-                       <p class="old">Vechime: 10.11.2024</p>
+        </div>
+        <div class="box">
+            <div class="list">
+                <div class="imgBx">
+                    <img src="img_benone2.png" alt="Benone Cranta">
+                </div>
+                <div class="content">
+                    <h1 class="rank"><small> M - </small>008</h1>
+                    <h4>Benone Cranta</h4>
+                    <p2>Medic Chirurg</p2>
+                    <p class="old">Vechime: 10.11.2024</p>
                 </div>
             </div>
-                   <div class="box">
-                <div class="list">
-                    <div class="imgBx">
-                        <img src="img_ampu.png" ></img>
-                    </div>
-                    <div class="content">
-                       <h1 class="rank"><small> M - </small>009</h1>
-                       <h4>Ampu Dragusin</h4>
-                       <p2>Medic Chirurg</p2>
-                       <p class="old">Vechime: 14.07.2024</p>
+        </div>
+        <div class="box">
+            <div class="list">
+                <div class="imgBx">
+                    <img src="img_ampu.png" alt="Ampu Dragusin">
+                </div>
+                <div class="content">
+                    <h1 class="rank"><small> M - </small>009</h1>
+                    <h4>Ampu Dragusin</h4>
+                    <p2>Medic Chirurg</p2>
+                    <p class="old">Vechime: 14.07.2024</p>
                 </div>
             </div>
-                  <div class="box">
-                <div class="list">
-                    <div class="imgBx">
-                        <img src="img_tudorescu.png" ></img>
-                    </div>
-                    <div class="content">
-                       <h1 class="rank"><small> M - </small>010</h1>
-                       <h4>Alex Tudorescu</h4>
-                       <p2>Medic Chirurg</p2>
-                       <p class="old">Vechime: 25.12.2024</p>
+        </div>
+        <div class="box">
+            <div class="list">
+                <div class="imgBx">
+                    <img src="img_tudorescu.png" alt="Alex Tudorescu">
+                </div>
+                <div class="content">
+                    <h1 class="rank"><small> M - </small>010</h1>
+                    <h4>Alex Tudorescu</h4>
+                    <p2>Medic Chirurg</p2>
+                    <p class="old">Vechime: 25.12.2024</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
         <section id="services" style="border-radius: 30px;">
             <link
@@ -1661,9 +1729,24 @@ h4{
 <script type="module" src="./script.js?v=2"></script>
 </html>
 </section>
+<button onclick="scrollToTop()" style="position: fixed; bottom: 20px; right: 20px; background-color: #ba3131; color: white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 20px; cursor: pointer; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+    ↑
+</button>
+<div id="progress-bar" style="position: fixed; top: 0; left: 0; height: 5px; background-color: #ffffff; width: 0%; z-index: 1000;"></div>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script>
+    window.addEventListener('scroll', () => {
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progress = (scrollTop / scrollHeight) * 100;
+        document.getElementById('progress-bar').style.width = progress + '%';
+    });
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
     document.addEventListener('DOMContentLoaded', () => {
         const dataList = document.getElementById('data-list'); // Adjust to match your container
 
@@ -1680,6 +1763,7 @@ h4{
             }
         });
     });
+    
 
     document.querySelector('.collapsible').addEventListener('click', function() {
         const content = this.nextElementSibling;
