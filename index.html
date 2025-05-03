@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 <!-- Tailwind CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
     <meta charset="UTF-8">
@@ -1188,9 +1189,31 @@ h4{
         transform: translateX(-70px);
     }
 
+    /* CARD, INFORMATII EXTRA */
+    .card-elegant {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.4s ease;
+}
+.card-elegant:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+.card-icon {
+  font-size: 1.8rem;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+
     </style>
 </head>
 <body> 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+
            
     <div class="background">
         <span></span>
@@ -1550,21 +1573,74 @@ h4{
                   
                 </section> 
 
-                <section id="extra" style="margin-top: 100px; border-radius: 30px;">
-                    <h2 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">Informații Extra</h2>
-                    <center><p>- Pentru a intra în Departament este nevoie de minim 50 ore</p>
-                    <p>- În cazul în care ai primit CK poți intra chiar și la 0 ore pe character</p>
-                    <p>- Sunteți obligați odată cu intrarea în Departament să vă scoateți tatuajele de pe față</p>
-                    <p>- Structura Departamentului este una foarte dezvoltata care are nevoie de timp pentru a fi înțeleasă</p>
-                    <p>- Regulamentul pentru susținerea testelor se găsește pe forum</p>
-                    <p>- Foarte multe intrari/iesiri în/din Departament pot aduce la un BlackList temporar</p>
-                    <p>- Odată cu intrarea în Departament nu puteți face alt job, fie part time, fie full time</p></center>
-                    <div class="bottom" style="width: 100%; display: flex; flex-direction: row; gap: 20px; align-items: center; justify-content: center; box-sizing: border-box;">
-                        <img src="./logospital.png" style="width: 20%; height: 20%; border-radius: 0;  margin: 0;">
-                        <a href="https://forum.fplayt.ro/index.php?/forums/forum/165-spitalul-general-aplicatii-cv/" class="cv-button" style="margin-top: 0;">Creează un CV</a>
-                        <img src="./image_fpt.png" style="width: 12%; height: 12%; border-radius: 0; margin: 0;">
+                <section id="extra" class="mt-24 px-4 md:px-12">
+                    <h2 class="text-3xl font-bold text-white text-center mb-10 tracking-wide">Informații Extra</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  
+                      <!-- CARD 1 -->
+                      <div class="flex items-start gap-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-5 shadow-xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+                        <div class="text-2xl w-11 h-11 bg-gradient-to-br from-pink-600 to-red-500 text-white rounded-full flex items-center justify-center shadow-md">⏱️</div>
+                        <p class="text-white leading-relaxed"><strong>Ore necesare:</strong> Minim 50 ore pentru a aplica în Departament.</p>
+                      </div>
+                  
+                      <!-- CARD 2 -->
+                      <div class="flex items-start gap-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-5 shadow-xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+                        <div class="text-2xl w-11 h-11 bg-gradient-to-br from-blue-500 to-indigo-500 text-white rounded-full flex items-center justify-center shadow-md">🆕</div>
+                        <p class="text-white leading-relaxed"><strong>Personaj nou:</strong> CK îți permite să aplici chiar și cu 0 ore.</p>
+                      </div>
+                  
+                      <!-- CARD 3 -->
+                      <div class="flex items-start gap-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-5 shadow-xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+                        <div class="text-2xl w-11 h-11 bg-gradient-to-br from-red-700 to-red-400 text-white rounded-full flex items-center justify-center shadow-md">❌</div>
+                        <p class="text-white leading-relaxed"><strong>Estetică:</strong> Tatuajele de pe față trebuie eliminate la intrare.</p>
+                      </div>
+                  
+                      <!-- CARD 4 -->
+                      <div class="flex items-start gap-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-5 shadow-xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+                        <div class="text-2xl w-11 h-11 bg-gradient-to-br from-yellow-500 to-orange-500 text-white rounded-full flex items-center justify-center shadow-md">📚</div>
+                        <p class="text-white leading-relaxed"><strong>Complexitate:</strong> Structura este complexă, necesită timp de învățare.</p>
+                      </div>
+                  
+                      <!-- CARD 5 -->
+                      <div class="flex items-start gap-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-5 shadow-xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+                        <div class="text-2xl w-11 h-11 bg-gradient-to-br from-gray-600 to-zinc-500 text-white rounded-full flex items-center justify-center shadow-md">📄</div>
+                        <p class="text-white leading-relaxed"><strong>Regulament:</strong> Găsești regulile pe forum la secțiunea testări.</p>
+                      </div>
+                  
+                      <!-- CARD 6 -->
+                      <div class="flex items-start gap-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-5 shadow-xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+                        <div class="text-2xl w-11 h-11 bg-gradient-to-br from-rose-500 to-red-400 text-white rounded-full flex items-center justify-center shadow-md">🚫</div>
+                        <p class="text-white leading-relaxed"><strong>BlackList:</strong> Prea multe intrări/ieșiri duc la restricții temporare.</p>
+                      </div>
+                  
+                      <!-- CARD 7 -->
+                      <div class="flex items-start gap-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-5 shadow-xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 col-span-full md:col-span-2 lg:col-span-1">
+                        <div class="text-2xl w-11 h-11 bg-gradient-to-br from-amber-600 to-yellow-400 text-white rounded-full flex items-center justify-center shadow-md">💼</div>
+                        <p class="text-white leading-relaxed"><strong>Joburi externe:</strong> Odată cu intrarea în Departament nu puteți face alt job, fie part time, fie full time.</p>
+                      </div>
+
+                      <!-- CARD 8 -->
+                      <div class="flex items-start gap-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-5 shadow-xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 col-span-full md:col-span-2 lg:col-span-1">
+                        <div class="text-2xl w-11 h-11 bg-gradient-to-br from-red-600 to-amber-400 text-white rounded-full flex items-center justify-center shadow-md">💡</div>
+                        <p class="text-white leading-relaxed"><strong>Informatii:</strong> Aici punem informatii </p>
+                      </div>
+
+                      <!-- CARD 9 -->
+                      <div class="flex items-start gap-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-5 shadow-xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 col-span-full md:col-span-2 lg:col-span-1">
+                        <div class="text-2xl w-11 h-11 bg-gradient-to-br from-red-600 to-white text-white rounded-full flex items-center justify-center shadow-md">💨</div>
+                        <p class="text-white leading-relaxed"><strong>Informatii:</strong> Aici punem informatii</p>
+                      </div>
                     </div>
-                </section>
+                  
+                    <div class="mt-12 flex flex-wrap gap-8 items-center justify-center">
+                      <img src="./logospital.png" class="w-32 h-32 object-contain" alt="logo stanga" />
+                      <a href="https://forum.fplayt.ro/index.php?/forums/forum/165-spitalul-general-aplicatii-cv/" class="cv-button">Creează un CV</a>
+                      <img src="./image_fpt.png" class="w-24 h-24 object-contain" alt="logo dreapta" />
+                    </div>
+                  </section>
+                  
+                  
+                  
 
         </div>
             <div class="footer-content">
