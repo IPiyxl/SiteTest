@@ -799,26 +799,27 @@ h4{
     .pozaSpital{
         height: 30%;
     }
+    .image-side {
+        width: 100%; /* Ocupă întreaga lățime */
+        display: flex;
+        justify-content: center; /* Centrează imaginea pe orizontală */
+        align-items: center; /* Centrează imaginea pe verticală */
+        margin-bottom: 10px; /* Adaugă spațiu între imagini și text */
+    }
+
+    .image-side img {
+        width: 100px; /* Ajustează dimensiunea imaginii pentru mobil */
+        height: 100px;
+        object-fit: contain; /* Asigură că imaginea nu este distorsionată */
+    }
+
     .sub-department-container {
         flex-direction: column; /* Elemente pe coloană */
         align-items: center; /* Centrează toate elementele */
     }
 
-    .image-side {
-        width: 100%; /* Ocupă întreaga lățime */
-        display: flex;
-        justify-content: center; /* Centrează imaginea pe orizontală */
-        margin-bottom: 10px; /* Adaugă spațiu între imagini și text */
-    }
-
-    .image-side img {
-        width: 80px; /* Ajustează dimensiunea imaginii pentru mobil */
-        height: 80px;
-        object-fit: contain; /* Asigură că imaginea nu este distorsionată */
-    }
-
     .sub-department {
-        width: 100%; /* Ocupă întreaga lățime */
+        width: 90%; /* Ajustează dimensiunea pentru mobil */
         text-align: center; /* Centrează textul */
     }
 
