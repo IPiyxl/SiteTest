@@ -1261,6 +1261,256 @@ h4{
     transition: all 0.3s ease-in-out;
 }
 
+.tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+}
+
+.tree-level {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+}
+
+.tree-item {
+    background: rgba(142, 12, 12, 0.8);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    width: 150px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tree-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.tree-item::before,
+.tree-item::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 30px;
+    background: white;
+}
+
+.tree-item::before {
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tree-item::after {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tree-level:first-child .tree-item::before {
+    display: none;
+}
+
+.tree-level:last-child .tree-item::after {
+    display: none;
+}
+
+.tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+}
+
+.tree-level {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+}
+
+.tree-item {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    background: rgba(142, 12, 12, 0.8);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    width: 150px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tree-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.tree-item::before,
+.tree-item::after {
+    display: none;
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 30px;
+    background: white;
+}
+
+.tree-item::before {
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tree-item::after {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tree-level:first-child .tree-item::before {
+    display: none;
+}
+
+.tree-level:last-child .tree-item::after {
+    display: none;
+}
+
+.tree .imgBx img {
+    align-items: center;
+    width: 80px !important;
+    height: 80px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    transition: transform 0.3s ease-in-out !important;
+}
+
+.tree .imgBx img:hover {
+    transform: scale(1.1) !important;
+}
+
+@media (max-width: 768px) {
+    .tree .imgBx img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+}
+
+.tree-item .imgBx {
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Asigură-te că ocupă întreaga lățime a casetei */
+    height: auto; /* Ajustează înălțimea automat */
+    margin-bottom: 10px; /* Adaugă spațiu între imagine și text */
+    margin-top: -20px; /* Mută imaginea mai sus */
+}
+
+.tree-item .imgBx img {
+    opacity: 1;
+    width: 70px; /* Ajustează dimensiunea imaginii */
+    height: 70px; /* Ajustează dimensiunea imaginii */
+    object-fit: cover; /* Asigură că imaginea nu este distorsionată */
+    border-radius: 50%; /* Formă rotundă */
+    transition: transform 0.3s ease-in-out;
+}
+
+.tree-item {
+    background: rgba(142, 12, 12, 0.7); /* Fundal semi-transparent */
+    color: white;
+    padding: 10px; /* Spațiu interior */
+    border-radius: 30px; /* Colțuri rotunjite */
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Umbra casetei */
+    position: relative;
+    width: 200px; /* Ajustează lățimea casetei */
+    height: 210px; /* Ajustează înălțimea casetei */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Tranziții pentru hover */
+}
+
+.tree-item:hover {
+    background: rgba(142, 12, 12, 1); /* Fundal complet opac la hover */
+    transform: translateY(-10px); /* Efect de ridicare */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Umbra mai pronunțată */
+}
+
+.tree-item h1.rank {
+    text-align: center;
+    font-size: 0.9em; /* Dimensiune mai mică pentru rank */
+    margin-bottom: 5px; /* Spațiu între rank și nume */
+}
+
+.tree-item h4 {
+    text-align: center;
+    font-size: 1em; /* Dimensiune mai mică pentru nume */
+    margin-bottom: 5px; /* Spațiu între nume și rol */
+}
+
+.tree-item p2, .tree-item .old {
+    font-size: 0.8em; /* Dimensiune mai mică pentru text */
+    line-height: 1.2; /* Spațiere între linii */
+}
+
+.tree-item .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px; /* Spațiu între elemente */
+    max-width: 200px; /* Permite textului să ocupe mai mult spațiu */
+    max-height: 150px;
+    text-align: center; /* Centrează textul */
+    margin: 0 auto; /* Centrează conținutul în casetă */
+    word-wrap: break-word; /* Asigură că textul lung se rupe pe linii noi */
+    line-height: 1.5; /* Crește spațierea între linii */
+}
+
+@media (max-width: 768px) {
+    .tree-item {
+        width: 100px; /* Dimensiune mai mică pentru casete */
+        padding: 8px; /* Reduce padding-ul */
+    }
+
+    .tree-item .imgBx img {
+        width: 60px; /* Dimensiune mai mică pentru imagini */
+        height: 60px;
+    }
+
+    .tree-item h1.rank, .tree-item h4, .tree-item p2, .tree-item .old {
+        font-size: 0.7em; /* Dimensiune mai mică pentru text */
+    }
+}
+
+@media (max-width: 768px) {
+    .tree-item {
+        width: 140px; /* Lățime mai mică pentru dispozitive mobile */
+        padding: 8px; /* Reduce padding-ul */
+    }
+}
+
+.tree-item .content .old,
+.tree-item .content .rank {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font Segoe UI */
+    font-weight: bold; /* Bold text */
+    opacity: 0; /* Ascunde inițial */
+    transition: opacity 0.3s ease-in-out; /* Tranziție lină */
+}
+
+.tree-item:hover .content .old,
+.tree-item:hover .content .rank {
+    opacity: 1; /* Afișează la hover */
+}
 
 
 
@@ -1326,13 +1576,10 @@ h4{
         </h2>
     </center>
 
-    <!-- Director General -->
-    <div style="margin-bottom: 30px;">
-        <h3 style="color: #ffffff; font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;">
-            <i class="fas fa-user-tie"></i> Director General
-        </h3>
-        <div class="box">
-            <div class="list">
+    <div class="tree">
+        <!-- Director General -->
+        <div class="tree-level">
+            <div class="tree-item">
                 <div class="imgBx">
                     <img src="img_alin2.png" alt="Darrin Rodriguez">
                 </div>
@@ -1344,48 +1591,25 @@ h4{
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Directori Adjuncți -->
-    <div style="margin-bottom: 30px;">
-        <h3 style="color: #ffffff; font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;">
-            <i class="fas fa-user"></i> Directori Adjuncți
-        </h3>
-        <div class="box">
-            <div class="list">
-                <div class="imgBx">
-                    <img src="img_antonio.png" alt="Shades Antonio">
-                </div>
-                <div class="content">
-                    <h1 class="rank"><small> M - </small>002</h1>
-                    <h4>Shades Antonio</h4>
-                    <p2>Director Adjunct</p2>
-                    <p class="old">Vechime: 25.10.2023</p>
-                </div>
-            </div>
+<!-- Directori Adjuncți -->
+<div class="tree-level">
+    <div class="tree-item">
+        <div class="imgBx">
+            <img src="img_antonio.png" alt="Shades Antonio">
         </div>
-        <div class="box">
-            <div class="list">
-                <div class="imgBx">
-                    <img src="img_mihu.png" alt="Mario Mihu">
-                </div>
-                <div class="content">
-                    <h1 class="rank"><small> M - </small>003</h1>
-                    <h4>Mario Mihu</h4>
-                    <p2>Director Adjunct</p2>
-                    <p class="old">Vechime: 07.11.2023</p>
-                </div>
-            </div>
+        <div class="content">
+            <h1 class="rank"><small> M - </small>002</h1>
+            <h4>Shades Antonio</h4>
+            <p2>Director Adjunct</p2>
+            <p class="old">Vechime: 25.10.2023</p>
         </div>
     </div>
+</div>
 
-    <!-- Medic Inspectori -->
-    <div style="margin-bottom: 30px;">
-        <h3 style="color: #ffffff; font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;">
-            <i class="fas fa-user-md"></i> Medic Inspectori
-        </h3>
-        <div class="box">
-            <div class="list">
+        <!-- Medic Inspectori -->
+        <div class="tree-level">
+            <div class="tree-item">
                 <div class="imgBx">
                     <img src="img_manolescu2.png" alt="Alex Manolescu">
                 </div>
@@ -1396,9 +1620,7 @@ h4{
                     <p class="old">Vechime: 23.07.2024</p>
                 </div>
             </div>
-        </div>
-        <div class="box">
-            <div class="list">
+            <div class="tree-item">
                 <div class="imgBx">
                     <img src="img_brown.png" alt="Brown Allanon">
                 </div>
@@ -1409,9 +1631,7 @@ h4{
                     <p class="old">Vechime: 30.04.2024</p>
                 </div>
             </div>
-        </div>
-        <div class="box">
-            <div class="list">
+            <div class="tree-item">
                 <div class="imgBx">
                     <img src="img_olteanu.png" alt="Cranta Virgil">
                 </div>
@@ -1423,15 +1643,10 @@ h4{
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Medici Chirurgi -->
-    <div>
-        <h3 style="color: #ffffff; font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;">
-            <i class="fas fa-user-nurse"></i> Medici Chirurgi
-        </h3>
-        <div class="box">
-            <div class="list">
+        <!-- Medici Chirurgi -->
+        <div class="tree-level">
+            <div class="tree-item">
                 <div class="imgBx">
                     <img src="img_macovei2.png" alt="Macovei Marius-Iocan">
                 </div>
@@ -1442,9 +1657,7 @@ h4{
                     <p class="old">Vechime: 09.07.2024</p>
                 </div>
             </div>
-        </div>
-        <div class="box">
-            <div class="list">
+            <div class="tree-item">
                 <div class="imgBx">
                     <img src="img_benone2.png" alt="Benone Cranta">
                 </div>
@@ -1455,9 +1668,7 @@ h4{
                     <p class="old">Vechime: 10.11.2024</p>
                 </div>
             </div>
-        </div>
-        <div class="box">
-            <div class="list">
+            <div class="tree-item">
                 <div class="imgBx">
                     <img src="img_ampu.png" alt="Ampu Dragusin">
                 </div>
@@ -1468,9 +1679,7 @@ h4{
                     <p class="old">Vechime: 14.07.2024</p>
                 </div>
             </div>
-        </div>
-        <div class="box">
-            <div class="list">
+            <div class="tree-item">
                 <div class="imgBx">
                     <img src="img_tudorescu.png" alt="Alex Tudorescu">
                 </div>
